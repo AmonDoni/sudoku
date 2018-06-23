@@ -1,14 +1,19 @@
-﻿@{
+﻿@model byte?[,]
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="row">
-    <div class="col-md-3">
-        <h2>Application uses</h2>
-        <ul>
-            <li>Sample pages using ASP.NET Core MVC</li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518004">Bower</a> for managing client-side libraries</li>
-            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
+    <div class="col-sm-8 col-md-8">
+        @Html.Partial("_BoardView")
+
+    </div>
+    <div class="col-sm-4 col-md-4">
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-dark" onclick="location.href = '@Url.Action("Generate", "Home")'">Generate</button>
+            <button type="button" class="btn btn-dark" onclick="location.href = '@Url.Action("Solve", "Home")'">Solve</button>
+            <button type="button" class="btn btn-dark" onclick="location.href = '@Url.Action("Reset", "Home")'">Reset</button>
+        </div>
     </div>
 </div>

@@ -1,0 +1,89 @@
+﻿@model byte?[,]
+<div class="board">
+    @{
+        var blockSize = (byte) ViewData["BlockSize"];
+
+        for (var i = 0; i <= Model.GetUpperBound(0); i++)
+        {
+            if (i != 0 && i % blockSize == 0)
+            {
+                @:<br/>
+            }
+
+            for (var j = 0; j <= Model.GetUpperBound(1); j++)
+            {
+                if (j != 0 && j % blockSize == 0)
+                {
+                    @:&nbsp;
+                }
+                var value = Model[i, j];
+                @Html.TextBoxFor(m => value, new { i = i, j=j, type = "number", min = "0", max = "9", autocomplete = "off", onkeyup = "onCellValueChange(event)", onchange = "onCellValueChange(event)"})
+            }
+            <br/>
+        }
+    }
+</div>
+<div id="invalid" class="alert alert-danger" style="display: none">
+    <strong>Attention!</strong> Board is invalid!
+</div>
+<div id="success" class="alert alert-success" style="display: none">
+    <strong>Success!</strong>
+</div>
+
+<script type='text/javascript'>
+    var model = @Html.Raw(Json.Serialize(Model));
+
+    window.onload = function () {
+        var isBoardInvalid = @Html.Raw(Json.Serialize(ViewData["IsBoardInvalid"]));
+        if (isBoardInvalid) {
+            $('#invalid.alert').show();
+            $('#success.alert').hide();
+        } else {
+            $('#invalid.alert').hide();
+            if (!model.some(a => a.some(v => v === null || v === ''))) {
+                $('#success.alert').show();
+            } else {
+                $('#success.alert').hide();
+            }
+        }
+    };
+
+
+    function onCellValueChange(event) {
+        event.stopPropagation();
+        event.preventDefault();
+
+        var value = event.currentTarget.value;
+        var i = event.target.attributes['i'].value;
+        var j = event.target.attributes['j'].value;
+
+        if ((value !== '') && (1 > value || value > 9)) {
+            event.currentTarget.value = '';
+            model[i][j] = '';
+            return;
+        }
+
+        model[i][j] = value;
+
+        $.ajax({
+            type: 'POST',
+            url: '/Home/Update',
+            data: JSON.stringify(model),
+            success: function (result) {
+                if (result) {
+                    $('#invalid.alert').hide();
+                    if (!model.some(a => a.some(v => v === null || v === ''))) {
+                        $('#success.alert').show();
+                    } else {
+                        $('#success.alert').hide();
+                    }
+                } else {
+                    $('#invalid.alert').show();
+                    $('#success.alert').hide();
+                }
+            },
+            dataType: 'json',
+            contentType: 'application/json'
+        });
+    }
+</script>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sudoku.DAL\Sudoku.DAL.csproj" />
+    <ProjectReference Include="..\Sudoku.Infrastructure\Sudoku.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

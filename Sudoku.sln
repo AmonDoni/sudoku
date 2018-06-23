@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku", "Sudoku\Sudoku.csproj", "{58E31C2C-7484-46A0-920C-B653A69A7428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sudoku", "Sudoku\Sudoku.csproj", "{58E31C2C-7484-46A0-920C-B653A69A7428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.Logic", "Sudoku.Logic\Sudoku.Logic.csproj", "{DEE78970-D297-44F4-B9F9-89D7822BD140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.Logic.Tests", "Sudoku.Logic.Tests\Sudoku.Logic.Tests.csproj", "{6D75FD78-32B3-44D9-8415-B0CD78DBA39C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.DAL", "Sudoku.DAL\Sudoku.DAL.csproj", "{73753B32-3F62-4FEF-B194-CA5B9DC04AAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.Infrastructure", "Sudoku.Infrastructure\Sudoku.Infrastructure.csproj", "{20A0A5EB-FE7A-4B79-B401-C72182E20180}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{58E31C2C-7484-46A0-920C-B653A69A7428}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58E31C2C-7484-46A0-920C-B653A69A7428}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58E31C2C-7484-46A0-920C-B653A69A7428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE78970-D297-44F4-B9F9-89D7822BD140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE78970-D297-44F4-B9F9-89D7822BD140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE78970-D297-44F4-B9F9-89D7822BD140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE78970-D297-44F4-B9F9-89D7822BD140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D75FD78-32B3-44D9-8415-B0CD78DBA39C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D75FD78-32B3-44D9-8415-B0CD78DBA39C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D75FD78-32B3-44D9-8415-B0CD78DBA39C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D75FD78-32B3-44D9-8415-B0CD78DBA39C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73753B32-3F62-4FEF-B194-CA5B9DC04AAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73753B32-3F62-4FEF-B194-CA5B9DC04AAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73753B32-3F62-4FEF-B194-CA5B9DC04AAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73753B32-3F62-4FEF-B194-CA5B9DC04AAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A0A5EB-FE7A-4B79-B401-C72182E20180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A0A5EB-FE7A-4B79-B401-C72182E20180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A0A5EB-FE7A-4B79-B401-C72182E20180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A0A5EB-FE7A-4B79-B401-C72182E20180}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

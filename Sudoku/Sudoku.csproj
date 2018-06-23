@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,6 +15,12 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sudoku.DAL\Sudoku.DAL.csproj" />
+    <ProjectReference Include="..\Sudoku.Infrastructure\Sudoku.Infrastructure.csproj" />
+    <ProjectReference Include="..\Sudoku.Logic\Sudoku.Logic.csproj" />
   </ItemGroup>
 
 </Project>
